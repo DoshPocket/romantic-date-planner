@@ -44,9 +44,11 @@ GitHub:
 
 ## License
 This build is licensed under Apache 2.0. (https://www.apache.org/licenses/LICENSE-2.0).
+
 ---
 🏆 
 ## How to Contribute
 Feel free to contribute further to my code within the standards of The [Contributor Covenant](https://www.contributor-covenant.org/). Happy coding!
 
 ![Romantic Date Planner Homepage](./assets/images/dummydummy.png)
+
