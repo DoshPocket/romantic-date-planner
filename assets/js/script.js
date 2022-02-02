@@ -3,6 +3,8 @@ var generateBtn = document.querySelector(".btn");
 // var dateText = document.querySelector("#generate");
 var madeChoice =document.querySelector("#choiceMade");
 var options = ["walk", "meal", "movie"]; // Array of options for computer to pick from
+let mainContent = document.querySelector("#main-content");
+let secondContent = document.querySelector("#secondary-content");
 
 
 function getChoice() {
@@ -19,6 +21,10 @@ generateBtn.addEventListener("click", getChoice);
  var randomChoice = options[index];
 
  console.log(randomChoice);
+  mainContent.setAttribute("class", "d-none");
+  madeChoice.append(randomChoice);
+  secondContent.setAttribute("class", "row g-3 justify-content-center m-3");
+
  return randomChoice;
  }
  
