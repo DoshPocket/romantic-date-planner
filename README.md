@@ -39,8 +39,8 @@ THEN that same activity will not appear again until all activities have been gen
 
 ## Deployment
 
-Deployed at: 
-GitHub: 
+Deployed at: https://doshpocket.github.io/romantic-date-planner/
+GitHub: https://github.com/DoshPocket/romantic-date-planner
 
 ## License
 This build is licensed under Apache 2.0. (https://www.apache.org/licenses/LICENSE-2.0).

@@ -1,6 +1,4 @@
-//  generate choice for date
 var randomGenerateBtn = document.querySelector("#generateBtn");
-// var dateText = document.querySelector("#generate");
 var madeChoice =document.querySelector("#choiceMade");
 var options = ["walk", "meal", "movie"]; // Array of options for computer to pick from
 let mainContent = document.querySelector("#main-content");
@@ -12,17 +10,15 @@ let activitySearchInput = document.querySelector("#activitySearch")
 
 let walkApi = "3ec9ebfa550c41947096967b17d132e7";
 
-
 function getChoice() {
         var choice = generateDate();
         madeChoice.innerHTML = choice;
       }
 
   randomGenerateBtn.addEventListener("click", getChoice);
-
+//randomly generates an activity
  function generateDate(){
  // Get random index from array of options
-
  var index = Math.floor(Math.random() * options.length);
  var randomChoice = options[index];
 
@@ -30,13 +26,22 @@ function getChoice() {
   mainContent.setAttribute("class", "d-none");
   madeChoice.append(randomChoice);
   secondContent.setAttribute("class", "float-right");
-
+//starts matching api with randomly generated activity
+  dateActivityButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (randomChoice === "movie" && activitySearchInput !== ("")) {
+      getMovie();
+      } else if (randomChoice === "walk" && activitySearchInput !== ("")){
+      getWalk();
+      }
+  });
  return randomChoice;
  }
  // walk api 
- function getWalk(event) {
-  event.preventDefault();
+ function getWalk() {
+  // event.preventDefault();
   let cityName = activitySearchInput.value.trim();
+      //below may help with local storage integration
       //   let searchTerm = activitySearchInput.value;
       // searchHistory.push(searchTerm);
       console.log("1");
@@ -48,7 +53,7 @@ function getChoice() {
   .then(function (response) {
     console.log(response);
     return response.json()
-
+  })
       .then(function (data) {
         console.log(data);
         let lat = data.coord.lat;
@@ -58,7 +63,7 @@ function getChoice() {
       fetch(forecastRequestUrl)
       .then (function (response) {
         return response.json()
-
+      })
         .then(function (data) {
           console.log(data);
           let forecastEl = document.querySelectorAll(".list-group-item");
@@ -68,12 +73,9 @@ function getChoice() {
             console.log(data.list[i].weather[0].description);
             forecastEl[i].innerHTML = `<li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate} <hr><b>Forecast:</b> ${weatherDaily}</li>`;
           }
-        })
-      });
-        })
+        });
       });
  }
-
  // movie api
  function getMovie() {
   // event.preventDefault();
@@ -117,18 +119,3 @@ function votecolor(vote) {
       return 'red'
   }
 } 
-
-
-dateActivityButton.addEventListener('click', function(event) {
-  event.preventDefault();
-  if (randomChoice = "movie" && activitySearchInput !== ("")) {
-    getMovie();
-    } else if (randomChoice = "walk" && activitySearchInput !== ("")){
-    getWalk();
-    }
-    
-  
-});
-
-
-// dateActivityButton.addEventListener('click', getWalk);
