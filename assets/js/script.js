@@ -73,4 +73,62 @@ function getChoice() {
         })
       });
  }
- dateActivityButton.addEventListener('click', getWalk);
+
+ // movie api
+ function getMovie() {
+  // event.preventDefault();
+  //TMDB Api
+  var movieapi_key = 'api_key=7aeb02ecd1dd6cb11cf96a99d9801483';
+  var base_url = 'https://api.themoviedb.org/3';
+  // var api_url = base_url + '/discover/movie?sort_by=popularity.desc&' + movieapi_key;
+  var movieName = activitySearchInput.value.trim();
+  var movieurl = base_url + '/search/movie?' + movieapi_key;
+  var searchmovieurl = movieurl + '&query=' + movieName;
+  
+  fetch(searchmovieurl)
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function(data){
+      var movieEl= document.querySelectorAll(".list-group-item");
+      for(i=0; i < movieEl.length; i++) {
+        var movietitle = data.results[i].title;
+        var movievoteavr = data.results[i].vote_average;
+        var movieoverview = data.results[i].overview;
+        movieEl[i].innerHTML = `
+          <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
+          <b>${movietitle}</b>  
+          <span class="${votecolor(movievoteavr)}">${movievoteavr}</span>
+          <hr> <b>OverView:</b> ${movieoverview}
+          </li>
+        `
+      }
+    })      
+}
+
+ //Text color for the vote average of each movie
+function votecolor(vote) {
+  if (vote >= 8) {
+      return 'green'
+  }else if (vote >=4){
+      return 'orange'
+  }else {
+      return 'red'
+  }
+} 
+
+
+dateActivityButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  if (randomChoice = "movie" && activitySearchInput !== ("")) {
+    getMovie();
+    } else if (randomChoice = "walk" && activitySearchInput !== ("")){
+    getWalk();
+    }
+    
+  
+});
+
+
+// dateActivityButton.addEventListener('click', getWalk);
