@@ -6,3 +6,7 @@
 aside li {
     margin-bottom: 1rem;
 }
+#secondary-content{
+    width: 60%;
+    margin: 0 auto;
+}
