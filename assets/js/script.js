@@ -32,21 +32,21 @@ function getChoice() {
  // walk api
 
  
- function getWalk() {
-   let requestUrl = 'https://cors-anywhere.herokuapp.com/https://www.benbrougher.tech/hiker/v1/trails/';
+//  function getWalk() {
+//    let requestUrl = 'https://cors-anywhere.herokuapp.com/https://www.benbrougher.tech/hiker/v1/trails/';
     
-   fetch(requestUrl)
-     .then(function (response) {
-       console.log(response);
-       return response.json();
-         })
-     .then(function (data) {
-       console.log(data);
-       for (let i = 0; i < data.length; i++) {
-         let searchResultWalk = document.createElement('list-group-item');
-         searchResultWalk.textContent = data[i].html_url;
-         searchResultList.appendChild(searchResultWalk);
-       }
-     });
- }
- walkButton.addEventListener('click', getWalk);
+//    fetch(requestUrl)
+//      .then(function (response) {
+//        console.log(response);
+//        return response.json();
+//          })
+//      .then(function (data) {
+//        console.log(data);
+//        for (let i = 0; i < data.length; i++) {
+//          let searchResultWalk = document.createElement('list-group-item');
+//          searchResultWalk.textContent = data[i].html_url;
+//          searchResultList.appendChild(searchResultWalk);
+//        }
+//      });
+//  }
+//  walkButton.addEventListener('click', getWalk);
