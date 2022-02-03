@@ -51,23 +51,23 @@
         <!-- random date activity generator button on landing page-->
           <div class="row min-w-min gap-2 mt-12 col-md-4 offset-md-2 align-items-center justify-content-center" id="main-content">
             <h2 class="text-center text-6xl fancy">What are we doing tonight?</h2>
-            <button type="button" class="btn btn-light">Plan Your Date</button>
+            <button type="button" id="generateBtn" class="btn btn-light">Plan Your Date</button>
           </div>
             <!-- search field and submit button for searching date acvitity details on secondary page-->
-    <form id="secondary-content" class="row g-3 justify-content-center m-3 d-none">
+    <form id="secondary-content" class="float-right d-none">
       <div class="col-12 max-w-full text-center">
         <label for="activitySearch" class="text-5xl fancy">Plan your <div id ="choiceMade"></div></label>
       </div>
       <div class="row col-auto">
         <input type="input" class="form h-8" id="activitySearch" placeholder="Enter keyword">
-        <button type="submit" class="btn btn-primary mt-5">Search</button>
+        <button type="button" class="btn btn-primary mt-5" id="date-activity-button">Search</button>
       </div>
-      <ul class="list-group col-12 max-w-full d-none">
-        <li class="list-group-item"><button class="btn-sm btn-danger mr-1" type="submit"><i class="far fa-save"></i></button>An item</li>
-        <li class="list-group-item"><button class="btn-sm btn-danger mr-1" type="submit"><i class="far fa-save"></i></button>A second item</li>
-        <li class="list-group-item"><button class="btn-sm btn-danger mr-1" type="submit"><i class="far fa-save"></i></button>A third item</li>
-        <li class="list-group-item"><button class="btn-sm btn-danger mr-1" type="submit"><i class="far fa-save"></i></button>A fourth item</li>
-        <li class="list-group-item"><button class="btn-sm btn-danger mr-1" type="submit"><i class="far fa-save"></i></button>And a fifth one</li>
+      <ul class="list-group col-12 max-w-full ">
+        <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>An item</li>
+        <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>A second item</li>
+        <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>A third item</li>
+        <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>A fourth item</li>
+        <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>And a fifth one</li>
       </ul>
     </form>
     </div>
