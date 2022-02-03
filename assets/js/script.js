@@ -5,8 +5,12 @@ var madeChoice =document.querySelector("#choiceMade");
 var options = ["walk", "meal", "movie"]; // Array of options for computer to pick from
 let mainContent = document.querySelector("#main-content");
 let secondContent = document.querySelector("#secondary-content");
-let searchResultList = document.querySelector('.list-group');
-let walkButton = document.querySelector('#date-activity-button');
+let searchResultList = document.querySelector(".list-group");
+let dateActivityButton = document.querySelector("#date-activity-button");
+let activitySearchInput = document.querySelector("#activitySearch")
+// let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
+
+let walkApi = "3ec9ebfa550c41947096967b17d132e7";
 
 
 function getChoice() {
@@ -29,24 +33,44 @@ function getChoice() {
 
  return randomChoice;
  }
- // walk api
+ // walk api 
+ function getWalk(event) {
+  event.preventDefault();
+  let cityName = activitySearchInput.value.trim();
+      //   let searchTerm = activitySearchInput.value;
+      // searchHistory.push(searchTerm);
+      console.log("1");
+      // localStorage.setItem("search", JSON.stringify(searchHistory));
+      // renderSearchHistory();
+  let requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + walkApi;
+  // retrieves data from openweather for user inputted city
+  fetch(requestUrl)
+  .then(function (response) {
+    console.log(response);
+    return response.json()
 
- 
-//  function getWalk() {
-//    let requestUrl = 'https://cors-anywhere.herokuapp.com/https://www.benbrougher.tech/hiker/v1/trails/';
-    
-//    fetch(requestUrl)
-//      .then(function (response) {
-//        console.log(response);
-//        return response.json();
-//          })
-//      .then(function (data) {
-//        console.log(data);
-//        for (let i = 0; i < data.length; i++) {
-//          let searchResultWalk = document.createElement('list-group-item');
-//          searchResultWalk.textContent = data[i].html_url;
-//          searchResultList.appendChild(searchResultWalk);
-//        }
-//      });
-//  }
-//  walkButton.addEventListener('click', getWalk);
+      .then(function (data) {
+        console.log(data);
+        let lat = data.coord.lat;
+        let lon = data.coord.lon;
+
+      let forecastRequestUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=metric&appid=" + walkApi;
+      fetch(forecastRequestUrl)
+      .then (function (response) {
+        return response.json()
+
+        .then(function (data) {
+          console.log(data);
+          let forecastEl = document.querySelectorAll(".list-group-item");
+          for (i = 0; i < forecastEl.length; i++) {
+            let forecastDate = moment().add(i + 1, "days").format("ll");
+            weatherDaily = data.list[i].weather[0].description;
+            console.log(data.list[i].weather[0].description);
+            forecastEl[i].innerHTML = `<li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate} <hr><b>Forecast:</b> ${weatherDaily}</li>`;
+          }
+        })
+      });
+        })
+      });
+ }
+ dateActivityButton.addEventListener('click', getWalk);
