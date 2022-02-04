@@ -128,9 +128,17 @@ function getMealApi() {
     let mealEl = document.querySelectorAll(".list-group-item");
     for (i = 0; i < mealEl.length; i++) {
 
-      let urlText = data.meals[i].strMeal;
+      var urlText = data.meals[i].strMeal;
+      var urlRecipe = data.meals[i].strSource;
+      var urlArea = data.meals[i].strArea;
+      var urlCategory = data.meals[i].strCategory;
 
-      mealEl[i].innerHTML = `<li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText}</li>`;
+      mealEl[i].innerHTML = `
+      <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText}</li>
+      <hr><b>${urlArea}</b>
+      <br><b>${urlCategory}</b>
+      <br><b>Recipe: </b><a href ="${urlRecipe}">${urlRecipe}</a>
+      `
     }
   })
 }
