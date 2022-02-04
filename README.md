@@ -3,11 +3,11 @@
 
 ## Description
 
-We built this application to assist particularly busy avid daters in planning successful dates in order to save time. 
+We built this application to assist particularly busy avid daters in planning successful dates in order to save time. Our goal was to build a functional romantic date planner that also showcased our skills in the technologies we have learned so far and to create a project in a collaborative and agile environment. 
 
-We chose the features of this project to further our skills in...
+We chose the features of this project to further our skills in javascript, css, third-party styling libraries, server side APIs, local storage, and agile project collaboration.
 
-In building this project, we learned...
+In building this project, we learned how to overcome some of the challenges of an agile workspace. Regular communication is key to creating a successful project. We also learned that a good, free API can be a precious find, and that individual code can require more time than anticipated to incorporate into base code because there are simply so many ways to write working code. 
 
 ## User Story
 
