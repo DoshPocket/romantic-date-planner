@@ -6,6 +6,7 @@ let secondContent = document.querySelector("#secondary-content");
 let searchResultList = document.querySelector(".list-group");
 let dateActivityButton = document.querySelector("#date-activity-button");
 let activitySearchInput = document.querySelector("#activitySearch")
+let upcomingDatesList = document.querySelector("#upcoming-dates-list")
 // let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
 let walkApi = "3ec9ebfa550c41947096967b17d132e7";
@@ -74,7 +75,7 @@ function getChoice() {
             let forecastDate = moment().add(i + 1, "days").format("ll");
             weatherDaily = data.list[i].weather[0].description;
             console.log(data.list[i].weather[0].description);
-            forecastEl[i].innerHTML = `<li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate} <hr><b>Forecast:</b> ${weatherDaily}</li>`;
+            forecastEl[i].innerHTML = `<li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate} <hr><b>Forecast:</b> ${weatherDaily}</li>`;
           }
         });
       });
@@ -102,7 +103,7 @@ function getChoice() {
         var movievoteavr = data.results[i].vote_average;
         var movieoverview = data.results[i].overview;
         movieEl[i].innerHTML = `
-          <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
+          <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
           <b>${movietitle}</b>  
           <span class="${votecolor(movievoteavr)}">${movievoteavr}</span>
           <hr> <b>OverView:</b> ${movieoverview}
@@ -128,17 +129,9 @@ function getMealApi() {
     let mealEl = document.querySelectorAll(".list-group-item");
     for (i = 0; i < mealEl.length; i++) {
 
-      var urlText = data.meals[i].strMeal;
-      var urlRecipe = data.meals[i].strSource;
-      var urlArea = data.meals[i].strArea;
-      var urlCategory = data.meals[i].strCategory;
+      let urlText = data.meals[i].strMeal;
 
-      mealEl[i].innerHTML = `
-      <li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText}</li>
-      <hr><b>${urlArea}</b>
-      <br><b>${urlCategory}</b>
-      <br><b>Recipe: </b><a href ="${urlRecipe}">${urlRecipe}</a>
-      `
+      mealEl[i].innerHTML = `<li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText}</li>`;
     }
   })
 }
