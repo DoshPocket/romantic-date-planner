@@ -128,7 +128,7 @@ function getMealApi() {
     let mealEl = document.querySelectorAll(".list-group-item");
     for (i = 0; i < mealEl.length; i++) {
 
-      urlText = data.meals[0].strMeal;
+      let urlText = data.meals[i].strMeal;
 
       mealEl[i].innerHTML = `<li class="list-group-item"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText}</li>`;
     }
