@@ -114,13 +114,13 @@ weatherDaily5 = data.list[4].weather[0].description;
 
 
 
+searchResultList.setAttribute("class","list-group col-12 max-w-full")
 
-
-            forecastEl[0].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-1 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate1} <hr><b>Forecast:</b> ${weatherDaily1}</li>`;
-            forecastEl[1].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-2 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate2} <hr><b>Forecast:</b> ${weatherDaily2}</li>`;
-            forecastEl[2].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-3 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate3} <hr><b>Forecast:</b> ${weatherDaily3}</li>`;
-            forecastEl[3].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-4 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate4} <hr><b>Forecast:</b> ${weatherDaily4}</li>`;
-            forecastEl[4].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-5 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate5} <hr><b>Forecast:</b> ${weatherDaily5}</li>`;
+            forecastEl[0].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-1 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate1} <hr><b>Forecast:</b> ${weatherDaily1}</li>`;
+            forecastEl[1].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-2 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate2} <hr><b>Forecast:</b> ${weatherDaily2}</li>`;
+            forecastEl[2].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-3 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate3} <hr><b>Forecast:</b> ${weatherDaily3}</li>`;
+            forecastEl[3].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-4 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate4} <hr><b>Forecast:</b> ${weatherDaily4}</li>`;
+            forecastEl[4].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-5 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Date:</b> ${forecastDate5} <hr><b>Forecast:</b> ${weatherDaily5}</li>`;
 
 
 
@@ -281,9 +281,10 @@ weatherDaily5 = data.list[4].weather[0].description;
         //   <hr> <b>OverView:</b> ${movieoverview}
         //   </li>
         // `
+        searchResultList.setAttribute("class","list-group col-12 max-w-full")
 
         movieEl[0].innerHTML = `
-        <li class="list-group-item"><button class="save-button-1 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
+        <li class="list-group-item"><button class="save-button-1 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button> 
         <b>${movietitle1}</b>  
         <span class="${votecolor(movievoteavr1)}">${movievoteavr1}</span>
         <hr> <b>OverView:</b> ${movieoverview1}
@@ -291,7 +292,7 @@ weatherDaily5 = data.list[4].weather[0].description;
         `
 
         movieEl[1].innerHTML = `
-        <li class="list-group-item"><button class="save-button-2 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
+        <li class="list-group-item"><button class="save-button-2 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button> 
         <b>${movietitle2}</b>  
         <span class="${votecolor(movievoteavr2)}">${movievoteavr2}</span>
         <hr> <b>OverView:</b> ${movieoverview2}
@@ -299,7 +300,7 @@ weatherDaily5 = data.list[4].weather[0].description;
       `
 
       movieEl[2].innerHTML = `
-        <li class="list-group-item"><button class="save-button-3 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
+        <li class="list-group-item"><button class="save-button-3 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button> 
         <b>${movietitle3}</b>  
         <span class="${votecolor(movievoteavr3)}">${movievoteavr3}</span>
         <hr> <b>OverView:</b> ${movieoverview3}
@@ -307,7 +308,7 @@ weatherDaily5 = data.list[4].weather[0].description;
       `
 
       movieEl[3].innerHTML = `
-        <li class="list-group-item"><button class="save-button-4 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
+        <li class="list-group-item"><button class="save-button-4 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button> 
         <b>${movietitle4}</b>  
         <span class="${votecolor(movievoteavr4)}">${movievoteavr4}</span>
         <hr> <b>OverView:</b> ${movieoverview4}
@@ -315,7 +316,7 @@ weatherDaily5 = data.list[4].weather[0].description;
       `
 
       movieEl[4].innerHTML = `
-        <li class="list-group-item"><button class="save-button-5 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button> 
+        <li class="list-group-item"><button class="save-button-5 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button> 
         <b>${movietitle5}</b>  
         <span class="${votecolor(movievoteavr5)}">${movievoteavr5}</span>
         <hr> <b>OverView:</b> ${movieoverview5}
@@ -448,14 +449,14 @@ function getMealApi() {
       let urlText4 = data.meals[3].strMeal;
       let urlText5 = data.meals[4].strMeal;
 
+      searchResultList.setAttribute("class","list-group col-12 max-w-full")
 
 
-
-      mealEl[0].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-1 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText1}</li>`;
-      mealEl[1].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-2 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText2}</li>`;
-      mealEl[2].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-3 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText3}</li>`;
-      mealEl[3].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-4 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText4}</li>`;
-      mealEl[4].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-5 btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText5}</li>`;
+      mealEl[0].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-1 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText1}</li>`;
+      mealEl[1].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-2 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText2}</li>`;
+      mealEl[2].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-3 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText3}</li>`;
+      mealEl[3].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-4 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText4}</li>`;
+      mealEl[4].innerHTML = `<li class="list-group-item result-bg"><button class="save-button-5 btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button><b>Meal: </b>${urlText5}</li>`;
     // }
 
 savedMeal1 = urlText1

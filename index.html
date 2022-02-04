@@ -70,27 +70,41 @@
         <input type="input" class="form h-8 input-bg text-dark" id="activitySearch" placeholder="Enter keyword">
         <button type="button" class="btn btn-color mt-5 mb-3" id="date-activity-button">Search</button>
       </div>
-      <ul class="list-group col-12 max-w-full ">
-        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button></li>
-        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>A second item</li>
-        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>A third item</li>
-        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>A fourth item</li>
-        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" type="submit"><i class="far fa-save"></i></button>And a fifth one</li>
+      <ul class="list-group col-12 max-w-full d-none">
+        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button></li>
+        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button>A second item</li>
+        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button>A third item</li>
+        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button>A fourth item</li>
+        <li class="list-group-item result-bg"><button class="btn-sm btn-success mr-1" data-bs-toggle="modal" data-bs-target="#saveModal" type="submit"><i class="far fa-save"></i></button>And a fifth one</li>
       </ul>
     </div>
-
-
-
-
     </div>
+        <!-- Modal -->
+<div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-bg">
+        <h5 class="modal-title text-dark modal-font" id="exampleModalLabel">Saved</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-2xl text-center moodGrad modal-font">
+      <p>Save Successful!</p>
+      </div>
+      <div class="modal-footer modal-bg">
+        <button type="button" class="btn moodGrad" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </section>
   <!-- Footer -->
   <footer class="text-white text-center relative bottom-0 max-w-full" id="footer">
-    Made with the blood, sweat, and tears of <br>
-     sookerima Producitons &#169
+    A labour of ❤️<br>
+     by sookerima Productions &#169
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/script.js"></script>
