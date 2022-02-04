@@ -50,5 +50,6 @@ This build is licensed under Apache 2.0. (https://www.apache.org/licenses/LICENS
 ## How to Contribute
 Feel free to contribute further to my code within the standards of The [Contributor Covenant](https://www.contributor-covenant.org/). Happy coding!
 
-![Romantic Date Planner Homepage](./assets/images/dummydummy.png)
-
+![Romantic Date Planner Homepage](./assets/images/mainpage.png)
+![Romantic Date Planner Homepage](./assets/images/dropdown.png)
+![Romantic Date Planner Homepage](./assets/images/modal.png)
